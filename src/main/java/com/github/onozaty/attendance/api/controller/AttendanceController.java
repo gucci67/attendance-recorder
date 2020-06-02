@@ -3,6 +3,7 @@ package com.github.onozaty.attendance.api.controller;
 import java.time.YearMonth;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,11 +17,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AttendanceController {
 
-    private final AttendanceService service;
+	private final AttendanceService service;
 
-    @GetMapping("/api/attendances")
-    public List<DayAttendance> getDayAttendances(@RequestParam("month") YearMonth month) {
+	@CrossOrigin
+	@GetMapping("/api/attendances")
+	public List<DayAttendance> getDayAttendances(@RequestParam("month") YearMonth month) {
 
-        return service.getDayAttendances(month);
-    }
+		return service.getDayAttendances(month);
+	}
 }

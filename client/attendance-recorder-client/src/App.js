@@ -1,26 +1,28 @@
 import React from "react";
-import logo from "./logo.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "reactstrap";
 import "./App.css";
+import AttendanceTable from "./components/AttendanceTable";
+import MonthButton from "./components/MonthButton";
+import AttendanceContextProvider from "./contexts/AttendanceContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    componentDidMount();
+    return (
+        <div className="App">
+            <Container fluid={true}>
+                <h2 className="mt-4">Attendance Recorder</h2>
+                <AttendanceContextProvider>
+                    <MonthButton />
+                    <AttendanceTable />
+                </AttendanceContextProvider>
+            </Container>
+        </div>
+    );
 }
+
+const componentDidMount = () => {
+    document.title = "Attendance Recorder";
+};
 
 export default App;
