@@ -124,6 +124,7 @@ const overtimeLevel = (leave) => {
         const leaveHour = leave.substring(0, 2);
         switch (leaveHour) {
             case "22":
+            case "23":
                 return "#faa";
             case "21":
                 return "#fca";
