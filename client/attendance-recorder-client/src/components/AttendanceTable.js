@@ -24,7 +24,7 @@ function AttendanceTable() {
     const todayAttendance = getTodayAttendance(attendance);
 
     return (
-        <Table bordered striped className="mt-2 sticky_table">
+        <Table bordered hover size="sm" className="mt-2 sticky_table">
             <thead>
                 <AttendanceHeader
                     allUserNames={allUserNames}
